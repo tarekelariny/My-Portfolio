@@ -11,24 +11,53 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     background:#0f172a;
     color:#e2e8f0;
+    scroll-behavior:smooth;
 }
-section{
-    padding:70px 10%;
+
+/* NAVBAR */
+.navbar{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:#111827;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+    box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    z-index:1000;
 }
-h1,h2,h3{
+.logo{
     color:white;
+    font-weight:bold;
 }
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+.nav-links a{
+    color:#e2e8f0;
+    text-decoration:none;
+}
+.nav-links a:hover{
+    color:#3b82f6;
+}
+
+section{
+    padding:100px 10%;
+}
+
 .hero{
     text-align:center;
-    padding:120px 10%;
-    background:#111827;
+    padding-top:150px;
 }
 .hero h1{
     font-size:42px;
 }
 .hero p{
-    font-size:18px;
     color:#94a3b8;
+    font-size:18px;
 }
 .btn{
     display:inline-block;
@@ -39,6 +68,32 @@ h1,h2,h3{
     text-decoration:none;
     border-radius:6px;
 }
+
+/* PROJECT CARDS */
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+.project-card{
+    background:#111827;
+    padding:25px;
+    border-radius:10px;
+    transition:0.3s;
+}
+.project-card:hover{
+    transform:translateY(-5px);
+}
+.project-card h3{
+    margin-top:0;
+}
+.project-card a{
+    display:inline-block;
+    margin-top:15px;
+    color:#3b82f6;
+}
+
+/* SKILLS */
 .skills span{
     display:inline-block;
     background:#1e293b;
@@ -46,48 +101,55 @@ h1,h2,h3{
     margin:5px;
     border-radius:5px;
 }
-.project{
-    background:#111827;
-    padding:30px;
-    margin-bottom:40px;
-    border-radius:8px;
+
+/* CERTIFICATIONS */
+.cert-list li{
+    margin-bottom:10px;
 }
-.project img{
-    width:100%;
-    border-radius:8px;
-    margin-top:20px;
+
+/* CONTACT */
+.contact a{
+    color:#3b82f6;
+    text-decoration:none;
 }
+
 footer{
     text-align:center;
     padding:40px;
     background:#111827;
-}
-a{
-    color:#3b82f6;
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<nav class="navbar">
+<div class="logo">Tarek Elariny</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
 <h1>Tarek Elariny</h1>
 <h3>Data Analyst | Power BI Developer</h3>
 <p>Delivering data-driven insights through advanced analytics and interactive business intelligence solutions.</p>
-<a href="CV.pdf" class="btn">Download CV</a>
+<a href="Tarek_Elariny_CV.pdf" class="btn" download>Download CV</a>
 </section>
 
-<section>
+<section id="about">
 <h2>About Me</h2>
 <p>
-Data Analyst specialized in business intelligence and performance analytics.
-Experienced in transforming complex datasets into structured, actionable insights
-through interactive dashboards and advanced data modeling techniques.
+Data Analyst specialized in business intelligence and financial analytics.
+Experienced in building interactive dashboards, performing risk analysis,
+and transforming complex datasets into actionable business insights.
 </p>
-</section>
 
-<section>
-<h2>Technical Skills</h2>
+<h3>Technical Skills</h3>
 <div class="skills">
 <span>Power BI</span>
 <span>DAX</span>
@@ -95,145 +157,58 @@ through interactive dashboards and advanced data modeling techniques.
 <span>Excel</span>
 <span>Data Modeling</span>
 <span>Star Schema</span>
-<span>Data Cleaning</span>
 <span>Business Intelligence</span>
 </div>
 </section>
 
-<section>
-<h2>Featured Project</h2>
+<section id="projects">
+<h2>Featured Projects</h2>
 
-<div class="project">
+<div class="projects-grid">
+
+<div class="project-card">
 <h3>Omnichannel Retail Performance Analysis</h3>
-
-<p><strong>Project Overview:</strong><br>
-This project focuses on analyzing credit risk within a bank loan portfolio using Power BI.
-The objective was to assess default patterns across customer demographics, employment stability,
-income segments, and loan exposure in order to support strategic credit risk management decisions.
-The analysis transforms raw loan and customer data into structured, risk-focused insights
-to enhance portfolio monitoring and minimize financial exposure.
-</p>
-
-<p><strong>Dashboard Structure:</strong></p>
-<ul>
-<li><strong>Portfolio Overview:</strong> High-level KPIs including total customers (33K), total loan exposure (\$312M), default rate (19%), and defaulted amount (\$58M).</li>
-<li><strong>Demographic Risk Analysis:</strong> Default rates by age group, gender, marital status, and education level.</li>
-<li><strong>Income & Employment Risk:</strong> Risk distribution across income groups and employment types.</li>
-<li><strong>Housing & Ownership Risk:</strong> Credit risk patterns based on home ownership categories.</li>
-<li><strong>Geographical Analysis:</strong> Default rate analysis by country and region with drill-down capabilities.</li>
-</ul>
-
-<p><strong>Key Analytical Features:</strong></p>
-<ul>
-<li>Interactive dashboards with advanced filtering and drill-down functionality.</li>
-<li>Dynamic KPI tracking for real-time default monitoring.</li>
-<li>Segment-level risk benchmarking against portfolio averages.</li>
-<li>Visual risk threshold indicators for identifying high-risk segments.</li>
-<li>Comparative analysis of defaulted vs non-defaulted loan exposure.</li>
-</ul>
-
-<p><strong>Technical Implementation:</strong></p>
-<ul>
-<li>Star schema data modeling integrating customer, loan, and demographic datasets.</li>
-<li>Advanced DAX measures for Default Rate, Default Amount, Risk Contribution, and Portfolio Exposure.</li>
-<li>Calculated columns for income binning, age grouping, and experience segmentation.</li>
-<li>Conditional formatting and reference lines to highlight above-average risk segments.</li>
-<li>Map visualization integration for geographical credit risk monitoring.</li>
-</ul>
-
-<p><strong>Key Risk Insights:</strong></p>
-<ul>
-<li>Mid-income customers demonstrate the highest default rate (30%), indicating elevated risk concentration within this segment.</li>
-<li>Unemployed customers exhibit the highest employment-based default rate (21%), emphasizing employment stability as a critical credit factor.</li>
-<li>The "Other" home ownership category shows the highest default rate (30%), signaling increased risk exposure.</li>
-<li>Customers aged 60+ present elevated default rates (27%), suggesting age-based risk sensitivity.</li>
-<li>Overall portfolio default rate stands at 19%, representing \$58M in defaulted exposure out of \$312M total loans.</li>
-</ul>
-
-<p><strong>Business Impact:</strong></p>
-<ul>
-<li>Identified high-risk borrower segments for improved credit approval criteria.</li>
-<li>Supported risk-based pricing strategies and loan structuring decisions.</li>
-<li>Enabled data-driven monitoring of portfolio health and default exposure.</li>
-<li>Provided actionable insights to reduce potential credit losses and strengthen risk governance.</li>
-</ul>
-
 <p>
-This project demonstrates strong analytical capabilities in financial risk assessment,
-data modeling, and business intelligence reporting, combining technical expertise
-with strategic credit risk evaluation to deliver measurable business value.
+Retail performance dashboard analyzing revenue, profitability,
+customer segmentation, and pricing strategy.
 </p>
-
-<img src="omni1.png">
-<img src="omni2.png">
-<img src="omni3.png">
-<img src="omni4.png">
-<img src="omni5.png">
-
+<a href="omni.html">View Details →</a><br>
+<a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a>
 </div>
-    </section>
 
-    <div class="project">
-
+<div class="project-card">
 <h3>Bank Credit Risk Analysis</h3>
-
 <p>
-This project analyzes bank loan portfolio risk using advanced Power BI modeling
-to evaluate default patterns, customer segmentation, and credit exposure.
-The objective was to identify high-risk segments and support data-driven credit policy decisions.
+Credit risk analysis of a \$312M loan portfolio identifying
+high-risk segments and default exposure patterns.
 </p>
-
-<p><strong>Portfolio Overview:</strong></p>
-<ul>
-<li>Total Customers: 33K</li>
-<li>Total Loan Amount: \$312M</li>
-<li>Overall Default Rate: 19%</li>
-<li>Total Defaulted Amount: \$58M</li>
-</ul>
-
-<p><strong>Risk Segmentation Analysis:</strong></p>
-<ul>
-<li>Mid-income customers show the highest default rate (30%)</li>
-<li>Unemployed segment records the highest employment-based default rate (21%)</li>
-<li>"Other" home ownership category shows elevated risk (30%)</li>
-<li>Age group 60+ demonstrates increased credit risk (27%)</li>
-</ul>
-
-<p><strong>Technical Implementation:</strong></p>
-<ul>
-<li>Star schema data modeling for loan & customer datasets</li>
-<li>DAX measures for Default Rate, Default Amount & Risk Ratios</li>
-<li>Segment-based drill-down analysis</li>
-<li>Dynamic filters by country, gender, education & employment type</li>
-</ul>
-
-<p><strong>Business Impact:</strong></p>
-<ul>
-<li>Identified high-risk segments for improved credit approval criteria</li>
-<li>Highlighted pricing & portfolio risk exposure areas</li>
-<li>Provided actionable insights to reduce default losses</li>
-</ul>
-
-<img src="bank1.png">
-<img src="bank2.png">
-<img src="bank3.png">
-<img src="bank4.png">
+<a href="bank.html">View Details →</a><br>
+<a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a>
+</div>
 
 </div>
 </section>
 
-<section>
+<section id="certifications">
+<h2>Certifications</h2>
+<ul class="cert-list">
+<li>Google Data Analytics Professional Certificate</li>
+<li>Microsoft PL-300: Power BI Data Analyst</li>
+<li>SQL for Data Analysis</li>
+<li>Python for Data Analytics</li>
+</ul>
+</section>
+
+<section id="contact" class="contact">
 <h2>Contact</h2>
 
-<p>
-<strong>Email:</strong><br>
+<p><strong>Email:</strong><br>
 <a href="mailto:tarekelariny123@gmail.com">
 tarekelariny123@gmail.com
 </a>
 </p>
 
-<p>
-<strong>Phone:</strong><br>
+<p><strong>Phone:</strong><br>
 <a href="tel:+201099977205">
 +20 109 997 7205
 </a>
