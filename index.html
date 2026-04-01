@@ -92,6 +92,23 @@ section{
     margin-top:15px;
     color:#3b82f6;
 }
+    .banner{
+    height:400px;
+    background-image:url("dashboard-banner.jpg");
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.banner::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(15,23,42,0.6);
+}
 
 /* SKILLS */
 .skills span{
@@ -140,6 +157,8 @@ footer{
 <p>Delivering data-driven insights through advanced analytics and interactive business intelligence solutions.</p>
 <a href="Tarek_Elariny_CV.pdf" class="btn" download>Download CV</a>
 </section>
+    
+    <section class="banner"></section>
 
 <section id="about">
 <h2>About Me</h2>
