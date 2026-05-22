@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bun Rush</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero">
+  <img
+    class="site-logo"
+    src="images/bun-rush-logo.png"
+    alt="Bun Rush Logo"
+  >
+</div>
+   
+    <p class="brand-subtitle">Fresh burgers, crispy broast, and fast ordering in one place.</p>
+  </div>
+
+  <div class="container">
+    <div class="top-links">
+      <button id="btn-shop" class="active" onclick="showSection('shop')">Order Now</button>
+      <button id="btn-track" onclick="showSection('track')">Track Your Order</button>
+      <a class="admin-link" href="admin.html">Admin</a>
+    </div>
+
+    <div id="shop" class="section active">
+      <div class="glass">
+        <h2>Our Menu</h2>
+        <div id="menuContainer"></div>
+      </div>
+
+      <div class="glass">
+        <h2>Complete Your Order</h2>
+
+        <div class="row">
+          <input type="text" id="customerName" placeholder="Customer Name">
+          <input type="text" id="phone" placeholder="Phone Number">
+        </div>
+
+        <h3>Your Cart</h3>
+        <div id="cart"></div>
+
+        <p><strong>Total: <span id="total">0</span> EGP</strong></p>
+
+        <button class="main-btn" onclick="submitOrder()">Submit Order</button>
+        <div id="orderResult"></div>
+      </div>
+    </div>
+
+    <div id="track" class="section">
+      <div class="glass">
+        <h2>Track Your Order</h2>
+        <input type="text" id="trackOrderId" placeholder="Enter Order ID">
+        <button class="main-btn" onclick="trackOrder()">Track</button>
+        <div id="trackResult"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

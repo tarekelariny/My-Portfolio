@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bun Rush Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="hero">
+  <img
+    class="site-logo"
+    src="images/bun-rush-logo.png"
+    alt="Bun Rush Logo"
+  >
+</div>
+  
+    <p class="brand-subtitle">Admin panel for managing orders, status updates, and exports.</p>
+  </div>
+
+  <div class="container">
+    <div class="glass">
+      <h2>Admin Login</h2>
+      <input type="email" id="adminEmail" placeholder="Email">
+      <input type="password" id="adminPassword" placeholder="Password">
+      <button class="main-btn" onclick="loginAdmin()">Login</button>
+      <div id="adminLoginResult"></div>
+    </div>
+
+    <div id="adminPanel" style="display:none;">
+      <div class="glass">
+        <div class="panel-header">
+          <h2 style="margin:0;">Bun Rush Admin Dashboard</h2>
+          <button class="danger" onclick="logoutAdmin()">Logout</button>
+        </div>
+
+        <div class="dashboard" style="margin-top:15px;">
+          <div class="stat-card">
+            <h3>Total Orders</h3>
+            <div class="stat-number" id="statTotalOrders">0</div>
+          </div>
+          <div class="stat-card">
+            <h3>Total Revenue</h3>
+            <div class="stat-number" id="statRevenue">0</div>
+          </div>
+          <div class="stat-card">
+            <h3>Pending Orders</h3>
+            <div class="stat-number" id="statPending">0</div>
+          </div>
+          <div class="stat-card">
+            <h3>Delivered Orders</h3>
+            <div class="stat-number" id="statDelivered">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass">
+        <div class="filters">
+          <div>
+            <label>Search</label>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search by order ID, customer name, or phone"
+              oninput="renderOrders()"
+            >
+          </div>
+
+          <div>
+            <label>Status Filter</label>
+            <select id="statusFilter" onchange="renderOrders()">
+              <option value="All">All</option>
+              <option value="Pending">Pending</option>
+              <option value="Preparing">Preparing</option>
+              <option value="OnTheWay">On The Way</option>
+              <option value="Delivered">Delivered</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div class="action-buttons">
+            <button class="main-btn" onclick="loadAllOrders()">Refresh Orders</button>
+            <button class="main-btn" onclick="downloadOrdersCSV()">Download Orders CSV</button>
+            <button class="main-btn" onclick="downloadOrderItemsCSV()">Download Order Items CSV</button>
+            <button id="generateBtn" class="main-btn" onclick="generateFakeOrders()">Generate Orders</button>
+            <div id="generateResult"></div>
+          </div>
+        </div>
+
+        <h2>All Orders</h2>
+        <div id="ordersList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
