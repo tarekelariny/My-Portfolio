@@ -1,289 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarek Elariny | Data Analyst</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarek Elariny | Data Analyst</title>
 
-<style>
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0f172a;
-    color:#e2e8f0;
-    scroll-behavior:smooth;
-}
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:#0f172a;
+      color:#e2e8f0;
+      scroll-behavior:smooth;
+    }
 
-/* NAVBAR */
-.navbar{
-    position:fixed;
-    width:100%;
-    top:0;
-    background:#111827;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 10%;
-    box-shadow:0 2px 10px rgba(0,0,0,0.4);
-    z-index:1000;
-}
-.logo{
-    color:white;
-    font-weight:bold;
-}
-.nav-links{
-    list-style:none;
-    display:flex;
-    gap:25px;
-}
-.nav-links a{
-    color:#e2e8f0;
-    text-decoration:none;
-}
-.nav-links a:hover{
-    color:#3b82f6;
-}
+    /* NAVBAR */
+    .navbar{
+      position:fixed;
+      width:100%;
+      top:0;
+      background:#111827;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 10%;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+      z-index:1000;
+      box-sizing:border-box;
+    }
 
-section{
-    padding:100px 10%;
-}
+    .logo{
+      color:white;
+      font-weight:bold;
+      font-size:28px;
+    }
 
-.hero{
-    text-align:center;
-    padding-top:150px;
-}
-.hero h1{
-    font-size:42px;
-}
-.hero p{
-    color:#94a3b8;
-    font-size:18px;
-}
-.btn{
-    display:inline-block;
-    padding:12px 25px;
-    margin-top:20px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-}
+    .nav-links{
+      list-style:none;
+      display:flex;
+      gap:25px;
+      margin:0;
+      padding:0;
+    }
 
-/* PROJECT CARDS */
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-.project-card{
-    background:#111827;
-    padding:25px;
-    border-radius:10px;
-    transition:0.3s;
-}
-.project-card:hover{
-    transform:translateY(-5px);
-}
-.project-card h3{
-    margin-top:0;
-}
-.project-card a{
-    display:inline-block;
-    margin-top:15px;
-    color:#3b82f6;
-}
+    .nav-links a{
+      color:#e2e8f0;
+      text-decoration:none;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      color:#3b82f6;
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    .hero{
+      text-align:center;
+      padding-top:150px;
+    }
+
+    .hero h1{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .hero p{
+      color:#94a3b8;
+      font-size:18px;
+      max-width:700px;
+      margin:0 auto;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 25px;
+      margin-top:20px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:6px;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+    }
+
     .banner{
-    height:400px;
-    background-image:url("dashboard-banner.png");
-    background-size:cover;
-    background-position:center;
-    position:relative;
-}
+      height:400px;
+      background-image:url("dashboard-banner.png");
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
 
-.banner::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(15,23,42,0.6);
-}
+    .banner::after{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(15,23,42,0.6);
+    }
 
-/* SKILLS */
-.skills span{
-    display:inline-block;
-    background:#1e293b;
-    padding:8px 15px;
-    margin:5px;
-    border-radius:5px;
-}
+    /* PROJECT CARDS */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      margin-top:30px;
+    }
 
-/* CERTIFICATIONS */
-.cert-list li{
-    margin-bottom:10px;
-}
+    .project-card{
+      background:#111827;
+      padding:25px;
+      border-radius:10px;
+      transition:0.3s;
+      box-sizing:border-box;
+    }
 
-/* CONTACT */
-.contact a{
-    color:#3b82f6;
-    text-decoration:none;
-}
+    .project-card:hover{
+      transform:translateY(-5px);
+    }
 
-footer{
-    text-align:center;
-    padding:40px;
-    background:#111827;
-}
-</style>
+    .project-card h3{
+      margin-top:15px;
+      margin-bottom:15px;
+      color:white;
+    }
+
+    .project-card p{
+      color:#e2e8f0;
+      line-height:1.6;
+    }
+
+    .project-card a{
+      display:inline-block;
+      margin-top:12px;
+      color:#3b82f6;
+      text-decoration:none;
+    }
+
+    .project-card a:hover{
+      text-decoration:underline;
+    }
+
+    .project-card img{
+      width:100%;
+      border-radius:8px;
+      margin-bottom:15px;
+    }
+
+    /* SKILLS */
+    .skills span{
+      display:inline-block;
+      background:#1e293b;
+      padding:8px 15px;
+      margin:5px;
+      border-radius:5px;
+    }
+
+    /* CERTIFICATIONS */
+    .cert-list li{
+      margin-bottom:10px;
+    }
+
+    /* CONTACT */
+    .contact a{
+      color:#3b82f6;
+      text-decoration:none;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      background:#111827;
+    }
+  </style>
 </head>
 
 <body>
 
-<nav class="navbar">
-<div class="logo">Tarek Elariny</div>
-<ul class="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#certifications">Certifications</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+  <nav class="navbar">
+    <div class="logo">Tarek Elariny</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<section class="hero" id="home">
-<h1>Tarek Elariny</h1>
-<h3>Data Analyst | Power BI Developer</h3>
-<p>Delivering data-driven insights through advanced analytics and interactive business intelligence solutions.</p>
-<a href="TAREK ELSAYED ELARINY f cv.pdf22.pdf" class="btn" download>Download CV</a>
-</section>
-    
-    <section class="banner"></section>
+  <section class="hero" id="home">
+    <h1>Tarek Elariny</h1>
+    <h3>Data Analyst | Power BI Developer</h3>
+    <p>Delivering data-driven insights through advanced analytics and interactive business intelligence solutions.</p>
+    <a href="CV.pdf" class="btn" download>Download CV</a>
+  </section>
 
-<section id="about">
-<h2>About Me</h2>
-<p>
-Data Analyst specialized in business intelligence and financial analytics.
-Experienced in building interactive dashboards, performing risk analysis,
-and transforming complex datasets into actionable business insights.
-</p>
+  <section class="banner"></section>
 
-<h3>Technical Skills</h3>
-<div class="skills">
-<span>Power BI</span>
-<span>DAX</span>
-<span>SQL</span>
-<span>Excel</span>
-<span>Data Modeling</span>
-<span>Star Schema</span>
-<span>Business Intelligence</span>
-    <span>Tableau</span>
-    <span>Python</span>
-</div>
-</section>
-
-<section id="projects">
-<h2>Featured Projects</h2>
-
-<div class="project-card">
-  <img src="prostesh-project/bunrush-logo.jpg" alt="Bun Rush Project Logo" style="width:100%; border-radius:8px; margin-bottom:15px;">
-
-  <h3>PROSTESH PROJECT</h3>
-
-  <p>
-    End-to-end restaurant analytics project combining
-    web development, Firebase cloud database,
-    Power BI dashboards, and business intelligence reporting.
-  </p>
-
-  <a href="prostesh-project/README.md" target="_blank">View Project</a><br>
-  <a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a><br><br>
-
-  <img src="prostesh-project/screenshots/profit-dashboard.png" alt="Profit Dashboard" style="width:100%; border-radius:8px;">
-</div>
-<div class="project-card">
-<h3>Omnichannel Retail Performance Analysis</h3>
-<p>
-Retail performance dashboard analyzing revenue, profitability,
-customer segmentation, and pricing strategy.
-</p>
-<a href="omni.html">View Details →</a><br>
-<a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a>
-</div>
-
-<div class="project-card">
-<h3>Bank Credit Risk Analysis</h3>
-<p>
-Credit risk analysis of a \$312M loan portfolio identifying
-high-risk segments and default exposure patterns.
-</p>
-<a href="bank.html">View Details →</a><br>
-<a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a>
-</div>
-
-   
-<div class="project-card">
-    
-    
-    <h3>Sales Analysis Dashboard</h3>
-    
+  <section id="about">
+    <h2>About Me</h2>
     <p>
-        Interactive Tableau dashboard analyzing sales performance,
-        profit, countries, cities, and product categories.
+      Data Analyst specialized in business intelligence and financial analytics.
+      Experienced in building interactive dashboards, performing risk analysis,
+      and transforming complex datasets into actionable business insights.
     </p>
-    <a href="bank.html">View Details →</a><br>
-   <a href="Sales-Analysis-Tableau/sales-dashboard.pdf" target="_blank">
-View Dashboard →
-       <a href="https://github.com/tarekelariny" target="_blank">GitHub Repository
-</a>
-<br><br>
 
-<a href="Sales-Analysis-Tableau/profit-dashboard.pdf" target="_blank">
-Profit Dashboard →
-</a>
-</div>
+    <h3>Technical Skills</h3>
+    <div class="skills">
+      <span>Power BI</span>
+      <span>DAX</span>
+      <span>SQL</span>
+      <span>Excel</span>
+      <span>Data Modeling</span>
+      <span>Star Schema</span>
+      <span>Business Intelligence</span>
+      <span>Tableau</span>
+      <span>Python</span>
+    </div>
+  </section>
 
+  <section id="projects">
+    <h2>Featured Projects</h2>
 
-</section>
+    <div class="projects-grid">
 
-<section id="certifications">
-<h2>Certifications</h2>
-<ul class="cert-list">
-<li>Microsoft PL-300: Power BI Data Analyst(In Process)</li>
-<li>SQL for Data Analysis</li>
-    <li>DEPI Initiative – Round 4 (Power BI for Data Analysis) • 2026</li>
-</ul>
-</section>
+      <div class="project-card">
+        <img src="PROSTESH PROJECT/bunrush-logo.jpg" alt="Bun Rush Project Logo">
 
-<section id="contact" class="contact">
-<h2>Contact</h2>
+        <h3>PROSTESH PROJECT</h3>
 
-<p><strong>Email:</strong><br>
-<a href="mailto:tarekelariny123@gmail.com">
-tarekelariny123@gmail.com
-</a>
-</p>
+        <p>
+          End-to-end restaurant analytics project combining
+          web development, Firebase cloud database,
+          Power BI dashboards, and business intelligence reporting.
+        </p>
 
-<p><strong>Phone:</strong><br>
-<a href="tel:+201099977205">
-+20 109 997 7205
-</a>
-</p>
+        <a href="PROSTESH PROJECT/README.md" target="_blank">View Project</a><br>
+        <a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a><br><br>
 
-<p>
-<a href="https://www.linkedin.com/in/tarekelariny" target="_blank">
-LinkedIn
-</a> |
-<a href="https://github.com/tarekelariny" target="_blank">
-GitHub
-</a>
-</p>
+        <img src="screenshots/profit-dashboard.png.jpg" alt="Profit Dashboard">
+      </div>
 
-</section>
+      <div class="project-card">
+        <h3>Omnichannel Retail Performance Analysis</h3>
+        <p>
+          Retail performance dashboard analyzing revenue, profitability,
+          customer segmentation, and pricing strategy.
+        </p>
+        <a href="omni.html">View Details →</a><br>
+        <a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a>
+      </div>
 
-<footer>
-© 2026 Tarek Elariny | Data Analytics Portfolio
-</footer>
+      <div class="project-card">
+        <h3>Bank Credit Risk Analysis</h3>
+        <p>
+          Credit risk analysis of a \$312M loan portfolio identifying
+          high-risk segments and default exposure patterns.
+        </p>
+        <a href="bank.html">View Details →</a><br>
+        <a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Sales Analysis Dashboard</h3>
+        <p>
+          Interactive Tableau dashboard analyzing sales performance,
+          profit, countries, cities, and product categories.
+        </p>
+        <a href="bank.html">View Details →</a><br>
+        <a href="Sales-Analysis-Tableau/sales-dashboard.pdf" target="_blank">View Dashboard →</a><br>
+        <a href="https://github.com/tarekelariny" target="_blank">GitHub Repository</a><br>
+        <a href="Sales-Analysis-Tableau/profit-dashboard.pdf" target="_blank">Profit Dashboard →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul class="cert-list">
+      <li>Microsoft PL-300: Power BI Data Analyst (In Process)</li>
+      <li>SQL for Data Analysis</li>
+      <li>DEPI Initiative – Round 4 (Power BI for Data Analysis) • 2026</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+
+    <p><strong>Email:</strong><br>
+      <a href="mailto:tarekelariny123@gmail.com">tarekelariny123@gmail.com</a>
+    </p>
+
+    <p><strong>Phone:</strong><br>
+      <a href="tel:+201099977205">+20 109 997 7205</a>
+    </p>
+
+    <p>
+      <a href="https://www.linkedin.com/in/tarekelariny" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/tarekelariny" target="_blank">GitHub</a>
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Tarek Elariny | Data Analytics Portfolio
+  </footer>
 
 </body>
 </html>
